@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <!-- Requeried meta tags -->
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- JavaScript -->
+    <script src='javascript/start.js'></script>
+
+    <!-- CSS custom -->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+
+    <!-- Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    
+    <!-- Page title and icon -->
+    <title>Mata-mosca - o jogo</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="game-title">
+            <div>
+                <p>Mata</p> 
+                <p>moscas</p>
+            </div> 
+            <select value="Selecione o nível" id="level">
+                <option value=''>selecione o nível</option>
+                <option value="normal">normal</option>
+                <option value="medium">médio</option>
+                <option value="hard">díficil</option>
+            </select>
+            <div class="game-button">
+                <button onclick="startGame()" type="button">INICIAR</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
