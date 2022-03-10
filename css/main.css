@@ -54,7 +54,6 @@ body {
 }
 /* Container and painel */
 .container {
-    border: 1px solid purple;
     text-align: center;
     height: 100vh;
     display: flex;
@@ -81,8 +80,7 @@ body {
 .lifes {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    border: 1px solid red;   
+    padding: 20px; 
 }
 
 .lifes img {
@@ -91,7 +89,6 @@ body {
 
 .time-area {
     padding: 15px;
-    border: 1px solid green;
     font-size: 12px;
     text-align: center;
     text-transform: uppercase;
