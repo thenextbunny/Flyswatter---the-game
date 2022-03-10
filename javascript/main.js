@@ -3,6 +3,23 @@ var height = 0
 var lifes = 1
 var time = 15
 
+var createFlyTime = 1250
+
+// Selecionando os níveis com base no tempo da criação dos mosquitos
+var level = window.location.search
+level = level.replace('?', '')
+
+if (level === 'normal') {
+    createFlyTime = 1250
+} else if (level === 'medium') {
+    createFlyTime = 1000
+} else if (level === 'hard') {
+    createFlyTime = 750
+} else if (level === 'ultrahard') {
+    createFlyTime = 550
+}
+
+// Ajustando tamanho 
 function adjustPrincipalSize() {
 
     // Recuperação de altura e largura do dispositivo
@@ -42,8 +59,8 @@ function randomPosition() {
 }
 
 // Defindo posições aleatórias para 'flies'
-var positionX = Math.floor(Math.random() * width) - 90
-var positionY = Math.floor(Math.random() * height) - 90
+var positionX = Math.floor(Math.random() * width) - 200
+var positionY = Math.floor(Math.random() * height) - 200
 
 // Controle do local que 'flies' aparece
 positionX = positionX < 0 ? 150 : positionX

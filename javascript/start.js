@@ -6,6 +6,6 @@ function startGame() {
         alert('Selecione um nível para iniciar o jogo')
         return false
     } else {
-        window.location.href='game.html'
+        window.location.href='game.html?' + level
     }
 }

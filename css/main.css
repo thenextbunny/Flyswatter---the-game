@@ -18,18 +18,18 @@ body {
 /* Img flies */
     /* Sizes */
 .fly1 {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .fly2 {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 }
 
 .fly3 {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
 }
 
     /* Rotation */
@@ -69,16 +69,15 @@ body {
     
 }
 
-.container-back {
+.painel {
     background: rgb(255, 255, 255, 0.3);
     border-radius: 30px 30px 0 0;
-    width: 50vw;
 }
 
 .lifes {
     display: flex;
     justify-content: center;
-    padding: 30px;
+    padding: 20px;
     border: 1px solid red;   
 }
 
@@ -86,7 +85,7 @@ body {
     padding: 0 5px 0 0px;
 }
 
-.time-area, .points {
+.time-area {
     padding: 15px;
     border: 1px solid green;
     font-size: 12px;
@@ -96,26 +95,95 @@ body {
 
 /* Game over and win page */
 .game-title {
-    font-size: 300%;
     color: #fff;
     text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 0;
 }
 
 .game-button button, select {
-    font-size: 20px;
     padding: 15px;
-    border-radius: 10px;
-    line-height: 15px;
+    border-radius: 20px;
     border: none;
+    margin-bottom: 10px;
     text-align: center;
-    transition: 1.1s;
-    background-color: rgb(255, 255, 255, 0.5);
+    text-transform: lowercase;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 1.5s;
 }
 
-.game-button button:hover, select:hover {
-    transform: scale(1.05);
-    transition: 1.4s;
+button:hover, select:hover {
+    transform: scale(1.008);
     background-color: rgb(255, 255, 255, 1);
+    transition: 1.5s;
 }
+
+/* Media Queries */
+	/** Extra small devices (portrait phones, less than 576.98px) **/
+	@media (max-width: 575.98px) {
+        .game-title {
+            font-size: 3.5em;
+        }
+        .game-button button, select {
+            width: 230px;
+            font-size: 16px;
+        }
+        .painel {
+            width: 90%;
+        }
+	}
+
+	/** Small devices (landscape phones, 576px and 767.98px) **/
+	@media (min-width: 576px) and (max-width: 767.98px) {
+        .game-title {
+            font-size: 5em;
+        }
+        .game-button button, select {
+            width: 300px;
+            font-size: 16px;
+        }
+
+        .painel {
+            width: 80%;
+        }
+	}
+
+	/** Medium devices (tablets, 768px to 991.98) **/
+	@media (min-width: 768px) and (max-width: 991.98px) { 
+        .game-title {
+            font-size: 6em;
+        }
+        .game-button button, select {
+            width: 300px;
+            font-size: 16px;
+        }
+        .painel {
+            width: 70%;
+        }
+	}
+
+	/*// Large devices (tablets, 768px and up) **/
+	@media (min-width: 992px) and (max-width: 1199.98px) {
+        .game-title {
+            font-size: 7em;
+        }
+        .game-button button, select{
+            width: 400px;
+            font-size: 17px;
+        }
+        .painel {
+            width: 60%;
+        }
+	}
+	/** X-Large devices (large desktops, 1200px and up) **/
+	@media (min-width: 1200px) {
+        .game-title {
+            font-size: 8em;
+        }
+
+        .game-button button, select {
+            width: 450px;
+            font-size: 20px;
+        }
+        .painel {
+            width: 50%;
+        }
+	}
