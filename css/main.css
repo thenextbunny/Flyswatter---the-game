@@ -1,4 +1,8 @@
 /* Geral */
+html {
+    cursor: url(../pics/flyswatter.png) 30 30, auto;
+}
+
 * {
     margin: 0;
     padding: 0;

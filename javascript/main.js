@@ -9,13 +9,13 @@ var createFlyTime = 1250
 var level = window.location.search
 level = level.replace('?', '')
 
-if (level === 'normal') {
+if (level === 'easy') {
     createFlyTime = 1250
-} else if (level === 'medium') {
+} else if (level === 'normal') {
     createFlyTime = 1000
-} else if (level === 'hard') {
+} else if (level === 'medium') {
     createFlyTime = 750
-} else if (level === 'ultrahard') {
+} else if (level === 'hard') {
     createFlyTime = 550
 }
 
