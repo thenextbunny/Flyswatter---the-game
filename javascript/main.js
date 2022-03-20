@@ -1,23 +1,23 @@
-var width = 0
-var height = 0
-var lifes = 1
-var time = 15
-
-var createFlyTime = 1250
+// Variáveis gerais
+let width = 0
+let height = 0
+let lifes = 1
+let time = 15
+let createFlyTime = 1250
 
 // Selecionando os níveis com base no tempo da criação dos mosquitos
-var level = window.location.search
-level = level.replace('?', '')
+let level = window.location.search
+    level = level.replace('?', '')
 
-if (level === 'easy') {
-    createFlyTime = 1250
-} else if (level === 'normal') {
-    createFlyTime = 1000
-} else if (level === 'medium') {
-    createFlyTime = 750
-} else if (level === 'hard') {
-    createFlyTime = 550
-}
+    if (level === 'easy') {
+        createFlyTime = 1250
+    } else if (level === 'normal') {
+        createFlyTime = 1000
+    } else if (level === 'medium') {
+        createFlyTime = 750
+    } else if (level === 'hard') {
+        createFlyTime = 550
+    }
 
 // Ajustando tamanho 
 function adjustPrincipalSize() {
@@ -29,7 +29,9 @@ function adjustPrincipalSize() {
 
 adjustPrincipalSize()
 
-var stopWatch = setInterval(function() {
+// 
+let stopWatch = setInterval(function() {
+    
     time -= 1
 
     if(time < 0) {
@@ -39,9 +41,10 @@ var stopWatch = setInterval(function() {
     } else {
         document.getElementById('stopwatch').innerHTML = time
     }
+
 }, 1000)
 
-// Atribuição do JavaScript após o body existir
+// 
 function randomPosition() {
 
    // Remoção do 'fly' anterior
@@ -53,38 +56,39 @@ function randomPosition() {
         if(lifes > 2) {
            window.location.href='gameover.html'
         } else {
-            document.getElementById('life' + lifes).src='pics/heart_empty.png'
+            document.getElementById('life' + lifes).src='pics/heart_empty_v3.png'
             lifes++
+        }
     }
+
+    // Defindo posições aleatórias para as 'moscas'
+    let positionX = Math.floor(Math.random() * width) - 200
+        positionX = positionX < 0 ? 150 : positionX 
+    let positionY = Math.floor(Math.random() * height) - 200
+        positionY = positionY < 0 ? 150 : positionY
+
+    // Criar elemento 'moscas' de forma aleatória e programática
+    let fly = document.createElement('img')
+
+        fly.src = 'pics/fly.png'
+        fly.className = randomSize() + ' ' + randomRotation()
+        fly.style.left = positionX + 'px'
+        fly.style.top = positionY + 'px'
+        fly.style.position = 'absolute'
+        fly.id = 'fly'
+
+        fly.onclick = function() {
+            this.remove()
+        }
+
+    document.body.appendChild(fly)
 }
 
-// Defindo posições aleatórias para 'flies'
-var positionX = Math.floor(Math.random() * width) - 200
-var positionY = Math.floor(Math.random() * height) - 200
-
-// Controle do local que 'flies' aparece
-positionX = positionX < 0 ? 150 : positionX
-positionY = positionY < 0 ? 150 : positionY
-
-// Criar elemento em forma aleatória e programática
-var fly = document.createElement('img')
-fly.src = 'pics/fly.png'
-fly.className = randomSize() + ' ' + randomRotation()
-fly.style.left = positionX + 'px'
-fly.style.top = positionY + 'px'
-fly.style.position = 'absolute'
-fly.id = 'fly'
-fly.onclick = function() {
-    this.remove() // use fly.remove() or this.remove() console.log(0 ++)
-}
-document.body.appendChild(fly)
-}
-
-// Tamanhos randômicos para 'flies'
+// Tamanhos randômicos para as 'moscas'
 function randomSize() {
-    var reference = Math.floor(Math.random() * 3) 
+    let reference = Math.floor(Math.random() * 3) 
 
-    // Informando tamanho com ligação CSS
+    // Informando tamanho atribuído no CSS
     switch(reference) {
         case 0: 
             return 'fly1'
@@ -95,11 +99,11 @@ function randomSize() {
     }
 }
 
-// Alterando posições para 'flies' de forma randômica
+// Posições randômicas para as 'moscas'
 function randomRotation() {
-    var reference  = Math.floor(Math.random() * 4)
+    let reference  = Math.floor(Math.random() * 4)
 
-    // Informando rotation com ligação CSS
+    // Informando rotação atribuída no CSS
     switch(reference) {
         case 0: 
             return 'fly1_rotation'

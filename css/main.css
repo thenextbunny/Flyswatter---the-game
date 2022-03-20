@@ -1,12 +1,14 @@
 /* Geral */
-html {
-    cursor: url(../pics/flyswatter.png) 30 30, auto;
-}
-
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', Arial, sans-serif;
+    cursor: url(../pics/flyswatter.png) 30 30, auto;
+}
+
+body {
+    overflow: hidden;
+    background: url(..pics/bg.jpg) cover fixed no-repeat;
 }
 
 body {
@@ -15,135 +17,153 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    text-transform: uppercase;
 }
 
-
-/* Img flies */
-    /* Sizes */
-.fly1 {
-    width: 70px;
-    height: 70px;
-}
-
-.fly2 {
-    width: 80px;
-    height: 80px;
-}
-
-.fly3 {
-    width: 90px;
-    height: 90px;
-}
-
-    /* Rotation */
-.fly1_rotation {
-    transform: scaleX(1) rotate(-25deg);
-    }
-
-.fly2_rotation {
-    transform: scaleX(-1) rotate(25deg);
-}
-    
-.fly3_rotation {
-    transform: scaleX(1) rotate(-35deg);
-    }
-
-.fly4_rotation {
-    transform: scaleX(-1) rotate(35deg);
-}
-/* Container and painel */
+/* Container */
 .container {
-    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -ms-flex-align: center;
+          align-items: center;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 }
 
-#playing-game .container {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    
-}
-
-.painel {
-    background: rgb(255, 255, 255, 0.3);
-    border-radius: 30px 30px 0 0;
-}
-
-.lifes {
-    display: flex;
-    justify-content: center;
-    padding: 20px; 
-}
-
-.lifes img {
-    padding: 0 5px 0 0px;
-}
-
-.time-area {
-    padding: 15px;
-    font-size: 12px;
+.box {
     text-align: center;
-    text-transform: uppercase;
+    width: 80%;
+    padding: 20px;
 }
 
-/* Game over and win page */
+/* Title */
 .game-title {
+    text-transform: uppercase;
     color: #fff;
-    text-align: center;
 }
 
-.game-button button, select {
+.game-title p {
+    text-shadow: 4px 3px rgba(0, 0, 0, 1);
+}
+
+/* Buttons, inputs and select */
+button, select {
     padding: 15px;
     border-radius: 20px;
     border: none;
-    margin-bottom: 10px;
+    -webkit-box-shadow: 1px 2px rgba(0, 0, 0, 0.159);
+            box-shadow: 1px 2px rgba(0, 0, 0, 0.159);
+    text-shadow: 2px 1px rgb(255, 255, 255);
+    width: 48%;
     text-align: center;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-transition: 1.5s;
+         -o-transition: 1.5s;
+            transition: 1.5s;
     text-transform: lowercase;
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: 1.5s;
 }
 
 button:hover, select:hover {
-    transform: scale(1.008);
-    background-color: rgb(255, 255, 255, 1);
-    transition: 1.5s;
+    -webkit-transform: scale(1.008);
+        -ms-transform: scale(1.008);
+            transform: scale(1.008);
+    background-color: rgba(255, 255, 255, 1.0);
 }
 
-/* Media Queries */
-	/** Extra small devices (portrait phones, less than 576.98px) **/
-	@media (max-width: 575.98px) {
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+/* Img flies */
+
+    /* Sizes */
+    .fly1 {
+        width: 70px;
+        height: 70px;
+    }
+
+    .fly2 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .fly3 {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* Rotation and scale */
+    .fly1_rotation {
+        -webkit-transform: scaleX(1) rotate(-25deg);
+            -ms-transform: scaleX(1) rotate(-25deg);
+                transform: scaleX(1) rotate(-25deg);
+        }
+
+    .fly2_rotation {
+        -webkit-transform: scaleX(-1) rotate(25deg);
+            -ms-transform: scaleX(-1) rotate(25deg);
+                transform: scaleX(-1) rotate(25deg);
+    }
+        
+    .fly3_rotation {
+        -webkit-transform: scaleX(1) rotate(-35deg);
+            -ms-transform: scaleX(1) rotate(-35deg);
+                transform: scaleX(1) rotate(-35deg);
+        }
+
+    .fly4_rotation {
+        -webkit-transform: scaleX(-1) rotate(35deg);
+            -ms-transform: scaleX(-1) rotate(35deg);
+                transform: scaleX(-1) rotate(35deg);
+    }
+
+
+/* Playing game painel */
+.painel {
+    position: fixed;
+    width: 80%;
+    bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px 30px 0 0;
+    text-shadow: 2px 1px rgb(255, 255, 255);
+}
+
+.lifes {
+    padding: 15px 0 20px;
+}
+
+.lifes img {
+    width: 50px;
+    height: 40px;
+}
+
+.time.area {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+/* Media queries */
+    /** Extra small devices (portrait phones, less than 576.98px) **/
+    @media (max-width: 575.98px) {
         .game-title {
             font-size: 3.5em;
         }
-        .game-button button, select {
-            width: 230px;
-            font-size: 16px;
-        }
-        .painel {
-            width: 90%;
-        }
-	}
+    }
 
-	/** Small devices (landscape phones, 576px and 767.98px) **/
+    /** Small devices (landscape phones, 576px and 767.98px) **/
 	@media (min-width: 576px) and (max-width: 767.98px) {
         .game-title {
             font-size: 5em;
-        }
-        .game-button button, select {
-            width: 300px;
-            font-size: 16px;
-        }
-
-        .painel {
-            width: 80%;
         }
 	}
 
@@ -152,39 +172,17 @@ button:hover, select:hover {
         .game-title {
             font-size: 6em;
         }
-        .game-button button, select {
-            width: 300px;
-            font-size: 16px;
-        }
-        .painel {
-            width: 70%;
-        }
 	}
 
-	/*// Large devices (tablets, 768px and up) **/
+	/** Large devices (tablets, 768px and up) **/
 	@media (min-width: 992px) and (max-width: 1199.98px) {
         .game-title {
             font-size: 7em;
-        }
-        .game-button button, select{
-            width: 400px;
-            font-size: 17px;
-        }
-        .painel {
-            width: 60%;
         }
 	}
 	/** X-Large devices (large desktops, 1200px and up) **/
 	@media (min-width: 1200px) {
         .game-title {
             font-size: 8em;
-        }
-
-        .game-button button, select {
-            width: 450px;
-            font-size: 20px;
-        }
-        .painel {
-            width: 50%;
         }
 	}
