@@ -12,7 +12,7 @@
     <li>Mas se eu não consegui clicar em todas as moscas? Bom, você tem três vidas, ou seja, você pode não clicar em até três moscas.</li>
 </ol>
 
-[Link para jogar](https://thenextbunny.github.io/Flyswatter-the-game/)
+[Clique aqui para jogar!](https://thenextbunny.github.io/Flyswatter-the-game/)
 
 <h3>Funcionamento</h3>
 <p>O funcionamento do jogo foi desenvolvido com base na linguagem JavaScript e seguindo conceitos básicos como BOM, DOM, laços de repetição, funções, eventos, arrays e outros. De modo, o JavaScript foi incorporado no HTML e CSS.</p>
