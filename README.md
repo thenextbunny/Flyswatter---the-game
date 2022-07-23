@@ -24,7 +24,7 @@
     <li>CSS</li>
     <li>JavaScript</li>
   </ul>
+  
+  <h3>Imagem</h3>
+  <img src="https://user-images.githubusercontent.com/99208505/180582961-efa4acb3-e3c3-4655-a51c-6a360a34f745.png">
 </div>
-
-
-
